@@ -1,10 +1,10 @@
 
 class C4_5:
     def __init__(self, data):
-        self.data = []
+        self.data = data
         self.classes = ["High Income", "Middle Income", "Low Income"]
         self.tree = None
-        self.attributes = [];
+        self.attributes = []
 
     # Assigned to Kaleigh to filter the data.
     # 1. you may access job type by self.data["Occupation"], and please return filtered list of data
@@ -36,3 +36,16 @@ class C4_5:
             ent += num * self.log(num)
         return ent * -1
 
+    def preprocessData(self):
+        columns = list(self.data.keys()) # get all column names
+        numOfEntries = len(self.data[columns[0]]) # get how much rows of data there is
+        index = 0
+
+        while index < numOfEntries:
+            age = self.data["Age"][index] # grab row index of Age column
+            if(age == "" or int(age) < 15): # if no age or less than 15, discard
+                for column in columns: # delete that row from each column
+                    del self.data[column][index]
+                index-=1
+                numOfEntries-=1 # we have 1 less row now
+            index+=1

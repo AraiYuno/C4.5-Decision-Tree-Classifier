@@ -1,5 +1,6 @@
 import csv
 from collections import defaultdict
+from C4_5 import C4_5
 
 def read_in_file( path ):
     columns = defaultdict(list)  # each value in each column is appended to a list
@@ -13,6 +14,8 @@ def read_in_file( path ):
 
 def main():
     data = read_in_file("./data/data.csv")
-    print(data["Industry"])
-
+    c45 = C4_5(data)
+    # pre-process data
+    c45.preprocessData()
+    print(c45.data)
 main()
