@@ -15,7 +15,12 @@ def read_in_file( path ):
 def main():
     data = read_in_file("./data/data.csv")
     c45 = C4_5(data)
+
     # pre-process data
     c45.preprocessData()
-    print(c45.data)
+
+    # c45.generateTree()
+    c45.generateC4_5Tree()
+
+
 main()
