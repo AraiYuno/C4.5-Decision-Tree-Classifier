@@ -20,7 +20,12 @@ class C4_5:
         self.tree = self.recursiveBuildC4_5Tree(self.data, self.attributes)
 
     def recursiveBuildC4_5Tree(self, curData, curAttributes):
-        print("to be done")
+        # allSame = self.allSameClass(curData)
+
+        if curData is None or len(curData) == 0:
+            # Fail
+            return Node(True, "Fail", None)
+
 
     def preprocessData(self):
         columns = self.attributes
@@ -42,28 +47,27 @@ class C4_5:
 
     # This should work
     def printNode(self, node, indent=""):
-        print(node)
         if not node.isLeaf:
-            if node.threshold is None:
+            if node.gainRatio is None:
                 # discrete
                 for index, child in enumerate(node.children):
                     if child.isLeaf:
-                        print(indent + node.label + " = " + self.attributes[index] + " : " + child.label)
+                        print(indent + node.attribute + " = " + self.attributes[index] + " : " + child.attribute)
                     else:
-                        print(indent + node.label + " = " + self.attributes[index] + " : ")
+                        print(indent + node.attribute + " = " + self.attributes[index] + " : ")
                         self.printNode(child, indent + "	")
             else:
                 # numerical
                 leftChild = node.children[0]
                 rightChild = node.children[1]
                 if leftChild.isLeaf:
-                    print(indent + node.label + " <= " + str(node.threshold) + " : " + leftChild.label)
+                    print(indent + node.attribute + " <= " + str(node.gainRatio) + " : " + leftChild.attribute)
                 else:
-                    print(indent + node.label + " <= " + str(node.threshold) + " : ")
+                    print(indent + node.attribute + " <= " + str(node.gainRatio) + " : ")
                     self.printNode(leftChild, indent + "	")
 
                 if rightChild.isLeaf:
-                    print(indent + node.label + " > " + str(node.threshold) + " : " + rightChild.label)
+                    print(indent + node.attribute + " > " + str(node.gainRatio) + " : " + rightChild.attribute)
                 else:
-                    print(indent + node.label + " > " + str(node.threshold) + " : ")
+                    print(indent + node.attribute + " > " + str(node.gainRatio) + " : ")
                     self.printNode(rightChild, indent + "	")
