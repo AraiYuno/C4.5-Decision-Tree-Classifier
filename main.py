@@ -16,11 +16,14 @@ def main():
     data = read_in_file("./data/data.csv")
     c45 = C4_5(data)
 
-    # pre-process data
-    c45.preprocessData()
+    # filter + preprocess data
+    c45.filterData()
 
     # c45.generateTree()
     c45.generateC4_5Tree()
+
+    # print Tree
+    # c45.printTree()
 
 
 main()

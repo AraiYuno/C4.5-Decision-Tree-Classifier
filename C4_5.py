@@ -11,9 +11,9 @@ class C4_5:
     # Assigned to Kaleigh to filter the data.
     # 1. you may access job type by self.data["Occupation"], and please return filtered list of data
     # classified into one of the classes defined above.
-    # 2. filterData should remove all the unnecessary data such as people under the age of "15".
     def filterData(self):
         print("Kaleigh's job")
+        self.preprocessData()
 
     # This should work
     def generateC4_5Tree(self):
