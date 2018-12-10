@@ -15,8 +15,8 @@ def read_in_file(path):
     return columns
 
 
-def map_income_classes():
-    data = read_in_file("./data/mapIncomeClassData.csv")
+def train_data():
+    data = read_in_file("./data/training_data.csv")
     income_class = read_in_file("./data/occupation_classes.csv")
     mapped_class_list = []
     for occupation_value in data["Occupation"]:
@@ -109,13 +109,32 @@ def get_discrete_categories(column):
     return discrete_categories_str
 
 
-def main():
+def classify_record(c45_tree):
+    data = read_in_file("./data/testing_data.csv")
+    record = []
+    for i in range(len(data["Race"])):
+        record.append(data["Race"][i])
+        record.append(data["Working Hours"][i])
+        record.append(data["Education"][i])
+        record.append(data["Marital Status"][i])
+        record.append(data["IsBusinessOwner"][i])
+        record.append(data["livesInCity"][i])
+        record.append(data["Medical Condition"][i])
+        record.append(data["Age"][i])
+        record.append(data["Job Begin Year"][i])
+        record.append(data["Sex"][i])
+    income_level = c45_tree.classify(record)
+    print(income_level)
+
+
+def test_data():
     c1 = C4_5("./data/attributes_data.txt", "./data/attributes_names.txt")
     c1.fetchData()
     c1.preprocessData()
     c1.generateTree()
     c1.printTree()
+    classify_record(c1)
 
 
-map_income_classes()
-main()
+train_data()
+test_data()

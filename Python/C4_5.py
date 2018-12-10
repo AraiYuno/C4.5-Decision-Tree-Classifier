@@ -13,6 +13,24 @@ class C4_5:
         self.attributes = []
         self.tree = None
 
+
+    # Author: Kyle Ahn
+    #   Takes in a record of attributes and uses the decision tree to classify the record.
+    #   Returns the class string (Low Income, Middle Income, High Income)
+    def classify(self, record):
+        return self.recursive_classify(record, self.tree)
+
+
+    #Kevin's job
+    def recursive_classify(self, record, node):
+        print(node)
+        if node.isLeaf:
+            return node.label
+        else:
+            for i in range(len(record)):
+                print(record)
+
+
     def fetchData(self):
         with open(self.filePathToNames, "r") as file:
             classes = file.readline()
@@ -202,7 +220,7 @@ class C4_5:
 
     def printTree(self):
         self.printNode(self.tree)
-        
+
 
     def printNode(self, node, indent=""):
         if not node.isLeaf:

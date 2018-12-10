@@ -4,10 +4,7 @@
     <list default="true" id="cb115045-e71e-41db-a024-6a73f29e905b" name="Default" comment="Added preprocessdata to filterdata method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Python/C4_5.py" afterPath="$PROJECT_DIR$/Python/C4_5.py" />
-      <change beforePath="$PROJECT_DIR$/Python/data/attributes_data.txt" afterPath="$PROJECT_DIR$/Python/data/attributes_data.txt" />
-      <change beforePath="$PROJECT_DIR$/Python/data/attributes_names.txt" afterPath="$PROJECT_DIR$/Python/data/attributes_names.txt" />
-      <change beforePath="$PROJECT_DIR$/Python/data/data.csv" afterPath="$PROJECT_DIR$/Python/data/data.csv" />
-      <change beforePath="$PROJECT_DIR$/Python/data/mapIncomeClassData.csv" afterPath="$PROJECT_DIR$/Python/data/mapIncomeClassData.csv" />
+      <change beforePath="$PROJECT_DIR$/Python/data/mapIncomeClassData.csv" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Python/main.py" afterPath="$PROJECT_DIR$/Python/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,31 +19,11 @@
       <file leaf-file-name="C4_5.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Python/C4_5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5481">
-              <caret line="204" column="8" lean-forward="false" selection-start-line="204" selection-start-column="8" selection-end-line="204" selection-end-column="8" />
+            <state relative-caret-position="132">
+              <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="occupation_classifier.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Python/occupation classifier/occupation_classifier.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="remove_dupes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Python/occupation classifier/remove_dupes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -61,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mapIncomeClassData.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Python/data/mapIncomeClassData.csv">
+      <file leaf-file-name="remove_dupes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Python/occupation classifier/remove_dupes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="232">
+              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -84,11 +61,21 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Python/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3393">
-              <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+            <state relative-caret-position="393">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="training_data.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Python/data/training_data.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,6 +136,8 @@
       <find>high income</find>
       <find>Education</find>
       <find>*</find>
+      <find>csv</find>
+      <find>map_</find>
       <find>education</find>
       <find>generate</find>
     </findStrings>
@@ -368,13 +357,13 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23646408" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23646408" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -399,19 +388,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="11" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../COMP 4190/Assignment 3/FBSP Path Planning/FBSP Path Planning/rrt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C4_5.py" />
     <entry file="file://$PROJECT_DIR$/../../../COMP 4190/Assignment 3/FBSP Path Planning/FBSP Path Planning/fbsp path planning.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5017">
@@ -578,19 +559,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Python/data/attributes.names">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="24" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Python/data/attributes.names" />
     <entry file="file://$PROJECT_DIR$/Python/data/data.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -598,58 +571,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Python/data/attribute_data.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python/data/attribute_names.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python/occupation classifier/remove_dupes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Python/data/attribute_data.txt" />
+    <entry file="file://$PROJECT_DIR$/Python/data/attribute_names.txt" />
     <entry file="file://$PROJECT_DIR$/Python/occupation classifier/occupation_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Python/occupation classifier/outer_join.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python/data/mapIncomeClassData.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Python/data/mapIncomeClassData.csv" />
     <entry file="file://$PROJECT_DIR$/Python/data/occupation_classes.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -682,10 +616,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Python/data/testging_data.csv" />
+    <entry file="file://$PROJECT_DIR$/Python/data/training_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python/occupation classifier/outer_join.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python/occupation classifier/remove_dupes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Python/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3393">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+        <state relative-caret-position="393">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -694,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Python/C4_5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5481">
-          <caret line="204" column="8" lean-forward="false" selection-start-line="204" selection-start-column="8" selection-end-line="204" selection-end-column="8" />
+        <state relative-caret-position="132">
+          <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
