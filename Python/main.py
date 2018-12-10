@@ -13,17 +13,11 @@ def read_in_file( path ):
     return columns
 
 def main():
-    data = read_in_file("./data/data.csv")
-    c45 = C4_5(data)
-
-    # filter + preprocess data
-    c45.filterData()
-
-    # c45.generateTree()
-    c45.generateC4_5Tree()
-
-    # print Tree
-    # c45.printTree()
+    c1 = C4_5("./data/attributes.data", "./data/attributes.names")
+    c1.fetchData()
+    c1.preprocessData()
+    c1.generateTree()
+    c1.printTree()
 
 
 main()

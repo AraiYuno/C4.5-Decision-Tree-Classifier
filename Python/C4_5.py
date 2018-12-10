@@ -2,72 +2,214 @@ import math
 from Node import Node
 
 class C4_5:
-    def __init__(self, data):
-        self.data = data
-        self.classes = ["High Income", "Middle Income", "Low Income"]
+    """Creates a decision tree with C4.5 algorithm"""
+    def __init__(self, pathToData,pathToNames):
+        self.filePathToData = pathToData
+        self.filePathToNames = pathToNames
+        self.data = []
+        self.classes = []
+        self.numAttributes = -1
+        self.attrValues = {}
+        self.attributes = []
         self.tree = None
-        self.attributes = list(self.data.keys())  # get all column names
 
-    # Assigned to Kaleigh to filter the data.
-    # 1. you may access job type by self.data["Occupation"], and please return filtered list of data
-    # classified into one of the classes defined above.
-    def filterData(self):
-        print("Kaleigh's job")
-        self.preprocessData()
-
-    # This should work
-    def generateC4_5Tree(self):
-        self.tree = self.recursiveBuildC4_5Tree(self.data, self.attributes)
-
-    def recursiveBuildC4_5Tree(self, curData, curAttributes):
-        # allSame = self.allSameClass(curData)
-
-        if curData is None or len(curData) == 0:
-            # Fail
-            return Node(True, "Fail", None)
-
+    def fetchData(self):
+        with open(self.filePathToNames, "r") as file:
+            classes = file.readline()
+            self.classes = [x.strip() for x in classes.split(",")]
+            #add attributes
+            for line in file:
+                [attribute, values] = [x.strip() for x in line.split(":")]
+                values = [x.strip() for x in values.split(",")]
+                self.attrValues[attribute] = values
+        self.numAttributes = len(self.attrValues.keys())
+        self.attributes = list(self.attrValues.keys())
+        with open(self.filePathToData, "r") as file:
+            for line in file:
+                row = [x.strip() for x in line.split(",")]
+                if row != [] or row != [""]:
+                    self.data.append(row)
 
     def preprocessData(self):
-        columns = self.attributes
-        numOfEntries = len(self.data[columns[0]]) # get how much rows of data there is
-        index = 0
+        for index,row in enumerate(self.data):
+            for attr_index in range(self.numAttributes):
+                if(not self.isAttrDiscrete(self.attributes[attr_index])):
+                    self.data[index][attr_index] = float(self.data[index][attr_index])
 
-        while index < numOfEntries:
-            age = self.data["Age"][index] # grab row index of Age column
-            if(age == "" or int(age) < 15): # if no age or less than 15, discard
-                for column in columns: # delete that row from each column
-                    del self.data[column][index]
-                index-=1
-                numOfEntries-=1 # we have 1 less row now
-            index+=1
-
-    # This should work
     def printTree(self):
         self.printNode(self.tree)
 
-    # This should work
     def printNode(self, node, indent=""):
         if not node.isLeaf:
-            if node.gainRatio is None:
-                # discrete
-                for index, child in enumerate(node.children):
+            if node.threshold is None:
+                #discrete
+                for index,child in enumerate(node.children):
                     if child.isLeaf:
-                        print(indent + node.attribute + " = " + self.attributes[index] + " : " + child.attribute)
+                        print(indent + node.label + " = " + child.category + " : " + child.label)
                     else:
-                        print(indent + node.attribute + " = " + self.attributes[index] + " : ")
+                        print(indent + node.label + " = " + child.category + " : ")
                         self.printNode(child, indent + "	")
             else:
-                # numerical
                 leftChild = node.children[0]
                 rightChild = node.children[1]
+
+
                 if leftChild.isLeaf:
-                    print(indent + node.attribute + " <= " + str(node.gainRatio) + " : " + leftChild.attribute)
+                    print(indent + node.label + " <= " + str(node.threshold) + " : " + leftChild.label)
                 else:
-                    print(indent + node.attribute + " <= " + str(node.gainRatio) + " : ")
+                    print(indent + node.label + " <= " + str(node.threshold)+" : ")
                     self.printNode(leftChild, indent + "	")
 
                 if rightChild.isLeaf:
-                    print(indent + node.attribute + " > " + str(node.gainRatio) + " : " + rightChild.attribute)
+                    print(indent + node.label + " > " + str(node.threshold) + " : " + rightChild.label)
                 else:
-                    print(indent + node.attribute + " > " + str(node.gainRatio) + " : ")
-                    self.printNode(rightChild, indent + "	")
+                    print(indent + node.label + " > " + str(node.threshold) + " : ")
+                    self.printNode(rightChild , indent + "	")
+
+
+    def generateTree(self):
+        self.tree = self.recursiveGenerateTree(self.data, self.attributes)
+
+    def recursiveGenerateTree(self, curData, curAttributes):
+        allSame = self.allSameClass(curData)
+        if len(curData) == 0:
+            #Fail
+            return Node(True, "Fail", None)
+        elif allSame is not False:
+            #return a node with that class
+            return Node(True, allSame, None)
+        elif len(curAttributes) == 0:
+            #return a node with the majority class
+            majClass = self.getMajClass(curData)
+            return Node(True, majClass, None)
+        else:
+            (best,best_threshold,splitted) = self.splitAttribute(curData, curAttributes)
+            remainingAttributes = curAttributes[:]
+            if best is -1:
+                (best, best_threshold, splitted) = self.splitAttribute(curData, self.attributes)
+            else:
+                remainingAttributes.remove(best)
+            node = Node(False, best, best_threshold)
+            for subset in splitted:
+                if len(subset) != 0:
+                    child = self.recursiveGenerateTree(subset, remainingAttributes)
+                    if best == 'medicalCondition':
+                        child.category = subset[0][4]
+                    node.children.append(child)
+
+            return node
+
+    def getMajClass(self, curData):
+        freq = [0]*len(self.classes)
+        for row in curData:
+            index = self.classes.index(row[-1])
+            freq[index] += 1
+        maxInd = freq.index(max(freq))
+        return self.classes[maxInd]
+
+
+    def allSameClass(self, data):
+        for row in data:
+            if row[-1] != data[0][-1]:
+                return False
+        return data[0][-1]
+
+
+    def isAttrDiscrete(self, attribute):
+        if attribute not in self.attributes:
+            raise ValueError("Attribute not listed")
+        elif len(self.attrValues[attribute]) == 1 and self.attrValues[attribute][0] == "continuous":
+            return False
+        else:
+            return True
+
+    def splitAttribute(self, curData, curAttributes):
+        splitted = []
+        maxEnt = -1*float("inf")
+        best_attribute = -1
+        #None for discrete attributes, threshold value for continuous attributes
+        best_threshold = None
+        for attribute in curAttributes:
+            indexOfAttribute = self.attributes.index(attribute)
+            if self.isAttrDiscrete(attribute):
+                #split curData into n-subsets, where n is the number of
+                #different values of attribute i. Choose the attribute with
+                #the max gain
+                valuesForAttribute = self.attrValues[attribute]
+                subsets = [[] for attribute in valuesForAttribute]
+
+                for row in curData:
+                    for rowIndex in range(len(row)):
+                        for attrValueIndex in range(len(valuesForAttribute)):
+                            if row[rowIndex] == valuesForAttribute[attrValueIndex]:
+                                subsets[attrValueIndex].append(row)
+                                break
+
+                e = self.gain(curData, subsets)
+                if e > maxEnt:
+                    maxEnt = e
+                    splitted = subsets
+                    best_attribute = attribute
+                    best_threshold = None
+            else:
+                #sort the data according to the column.Then try all
+                #possible adjacent pairs. Choose the one that
+                #yields maximum gain
+                curData.sort(key = lambda x: x[indexOfAttribute])
+                for j in range(0, len(curData) - 1):
+                    if curData[j][indexOfAttribute] != curData[j+1][indexOfAttribute]:
+                        threshold = (curData[j][indexOfAttribute] + curData[j+1][indexOfAttribute]) / 2
+                        less = []
+                        greater = []
+                        for row in curData:
+                            if(row[indexOfAttribute] > threshold):
+                                greater.append(row)
+                            else:
+                                less.append(row)
+
+                        e = self.gain(curData, [less, greater])
+                        if e >= maxEnt:
+                            splitted = [less, greater]
+                            maxEnt = e
+                            best_attribute = attribute
+                            best_threshold = threshold
+
+        return (best_attribute,best_threshold,splitted)
+
+
+    def gain(self,unionSet, subsets):
+        #input : data and disjoint subsets of it
+        #output : information gain
+        S = len(unionSet)
+        #calculate impurity before split
+        impurityBeforeSplit = self.entropy(unionSet)
+        impurityBeforeSplit = self.entropy(unionSet)
+        #calculate impurity after split
+        weights = [len(subset)/S for subset in subsets]
+        impurityAfterSplit = 0
+        for i in range(len(subsets)):
+            impurityAfterSplit += weights[i]*self.entropy(subsets[i])
+        #calculate total gain
+        totalGain = impurityBeforeSplit - impurityAfterSplit
+        return totalGain
+
+    def entropy(self, dataSet):
+        S = len(dataSet)
+        if S == 0:
+            return 0
+        num_classes = [0 for i in self.classes]
+        for row in dataSet:
+            classIndex = list(self.classes).index(row[-1])
+            num_classes[classIndex] += 1
+        num_classes = [x/S for x in num_classes]
+        ent = 0
+        for num in num_classes:
+            ent += num*self.log(num)
+        return ent*-1
+
+
+    def log(self, x):
+        if x == 0:
+            return 0
+        else:
+            return math.log(x,2)
