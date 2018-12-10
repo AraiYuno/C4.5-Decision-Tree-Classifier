@@ -1,9 +1,9 @@
 import math
 from Node import Node
 
+#Author: Kyle Ahn
 class C4_5:
-    """Creates a decision tree with C4.5 algorithm"""
-    def __init__(self, pathToData,pathToNames):
+    def __init__(self, pathToData, pathToNames):
         self.filePathToData = pathToData
         self.filePathToNames = pathToNames
         self.data = []
@@ -36,36 +36,6 @@ class C4_5:
                 if(not self.isAttrDiscrete(self.attributes[attr_index])):
                     self.data[index][attr_index] = float(self.data[index][attr_index])
 
-    def printTree(self):
-        self.printNode(self.tree)
-
-    def printNode(self, node, indent=""):
-        if not node.isLeaf:
-            if node.threshold is None:
-                #discrete
-                for index,child in enumerate(node.children):
-                    if child.isLeaf:
-                        print(indent + node.label + " = " + child.category + " : " + child.label)
-                    else:
-                        print(indent + node.label + " = " + child.category + " : ")
-                        self.printNode(child, indent + "	")
-            else:
-                leftChild = node.children[0]
-                rightChild = node.children[1]
-
-
-                if leftChild.isLeaf:
-                    print(indent + node.label + " <= " + str(node.threshold) + " : " + leftChild.label)
-                else:
-                    print(indent + node.label + " <= " + str(node.threshold)+" : ")
-                    self.printNode(leftChild, indent + "	")
-
-                if rightChild.isLeaf:
-                    print(indent + node.label + " > " + str(node.threshold) + " : " + rightChild.label)
-                else:
-                    print(indent + node.label + " > " + str(node.threshold) + " : ")
-                    self.printNode(rightChild , indent + "	")
-
 
     def generateTree(self):
         self.tree = self.recursiveGenerateTree(self.data, self.attributes)
@@ -93,8 +63,7 @@ class C4_5:
             for subset in splitted:
                 if len(subset) != 0:
                     child = self.recursiveGenerateTree(subset, remainingAttributes)
-                    if best == 'medicalCondition':
-                        child.category = subset[0][4]
+                    self.set_category(child, best, subset)
                     node.children.append(child)
 
             return node
@@ -122,6 +91,22 @@ class C4_5:
             return False
         else:
             return True
+
+
+    def set_category(self, child, best, subset):
+        if best == 'Race':
+            child.category = subset[0][0]
+        elif best == 'Education':
+            child.category = subset[0][2]
+        elif best == 'Marital Status':
+            child.category = subset[0][3]
+        elif best == 'IsBusinessOwner':
+            child.category = subset[0][4]
+        elif best == 'livesInCity':
+            child.category = subset[0][5]
+        elif best == 'Medical Condition':
+            child.category = subset[0][6]
+
 
     def splitAttribute(self, curData, curAttributes):
         splitted = []
@@ -213,3 +198,35 @@ class C4_5:
             return 0
         else:
             return math.log(x,2)
+
+
+
+    def printTree(self):
+        self.printNode(self.tree)
+
+    def printNode(self, node, indent=""):
+        if not node.isLeaf:
+            if node.threshold is None:
+                #discrete
+                for index,child in enumerate(node.children):
+                    if child.isLeaf:
+                        print(indent + node.label + " = " + child.category + " : " + child.label)
+                    else:
+                        print(indent + node.label + " = " + child.category + " : ")
+                        self.printNode(child, indent + "	")
+            else:
+                leftChild = node.children[0]
+                rightChild = node.children[1]
+
+
+                if leftChild.isLeaf:
+                    print(indent + node.label + " <= " + str(node.threshold) + " : " + leftChild.label)
+                else:
+                    print(indent + node.label + " <= " + str(node.threshold)+" : ")
+                    self.printNode(leftChild, indent + "	")
+
+                if rightChild.isLeaf:
+                    print(indent + node.label + " > " + str(node.threshold) + " : " + rightChild.label)
+                else:
+                    print(indent + node.label + " > " + str(node.threshold) + " : ")
+                    self.printNode(rightChild , indent + "	")
