@@ -55,10 +55,7 @@ class C4_5:
         else:
             (best,best_threshold,splitted) = self.splitAttribute(curData, curAttributes)
             remainingAttributes = curAttributes[:]
-            if best is -1:
-                (best, best_threshold, splitted) = self.splitAttribute(curData, self.attributes)
-            else:
-                remainingAttributes.remove(best)
+            remainingAttributes.remove(best)
             node = Node(False, best, best_threshold)
             for subset in splitted:
                 if len(subset) != 0:
@@ -106,6 +103,8 @@ class C4_5:
             child.category = subset[0][5]
         elif best == 'Medical Condition':
             child.category = subset[0][6]
+        elif best == 'Sex':
+            child.category = subset[0][9]
 
 
     def splitAttribute(self, curData, curAttributes):
@@ -203,6 +202,7 @@ class C4_5:
 
     def printTree(self):
         self.printNode(self.tree)
+        
 
     def printNode(self, node, indent=""):
         if not node.isLeaf:

@@ -1,9 +1,11 @@
 Low Income, Middle Income, High Income
 Race : 0, 1, 2, 3, 4
 Working Hours : continuous
-Education : 34,39,44,42,41,43,40,38,33,37,36,46,31,35,32,45
+Education : No High School Diploma,High School Graduate,College,Bachelor's Degree,Master's Degree,MD/DDS/JD,Doctorate Degree
 Marital Status : 1,6,4,3,2,5
-IsBusinessOwner : 0,1,2
+IsBusinessOwner : 1,2
 livesInCity : 0,1,2
 Medical Condition : 0,1
 Age : continuous
+Job Begin  Year : continuous
+Sex : 1,2
