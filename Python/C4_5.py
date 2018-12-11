@@ -28,8 +28,10 @@ class C4_5:
             return node.label
         else:
             if node.label == "Race":
-                print(record[0])
-                self.recursive_classify(record, node.children[0])
+                race = node.category
+                for i in range(len(node.children)):
+                    if race == node.children[i].category:
+                        self.recursive_classify(record, node.children[i])
             elif node.label == "Working Hours":
                 hours_worked = float(record[1])
                 if hours_worked <= node.threshold:
@@ -57,16 +59,20 @@ class C4_5:
                     if education == node.children[i].category:
                         self.recursive_classify(record, node.children[i])
             elif node.label == "Marital Status":
-                print(record[3])
-                self.recursive_classify(record, node.children[0])
+                marital_status = node.category
+                for i in range(len(node.children)):
+                    if marital_status == node.children[i].category:
+                        self.recursive_classify(record, node.children[i])
             elif node.label == "IsBusinessOwner":
                 if record[4] == "1":
                     self.recursive_classify(record, node.children[0])
                 else:
                     self.recursive_classify(record, node.children[1])
             elif node.label == "livesInCity":
-                print(record[5])
-                self.recursive_classify(record, node.children[0])
+                lives_in_city = node.category
+                for i in range(len(node.children)):
+                    if lives_in_city == node.children[i].category:
+                        self.recursive_classify(record, node.children[i])
             elif node.label == "Medical Condition":
                 if record[5] == "0":
                     self.recursive_classify(record, node.children[0])
