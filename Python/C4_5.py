@@ -35,7 +35,7 @@ class C4_5:
                 if hours_worked <= node.threshold:
                     return self.recursive_classify(record, node.children[0])
                 else:
-                    self.recursive_classify(record, node.children[1])
+                    return self.recursive_classify(record, node.children[1])
             elif node.label == "Education":
                 if record[2] == "31" or record[2] == "32" \
                         or record[2] == "33" or record[2] == "34" or record[2] == "35" \
