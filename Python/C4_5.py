@@ -28,7 +28,7 @@ class C4_5:
             return node.label
         else:
             if node.label == "Race":
-                race = node.category
+                race = record[0]
                 for i in range(len(node.children)):
                     if race == node.children[i].category:
                         self.recursive_classify(record, node.children[i])
@@ -59,7 +59,7 @@ class C4_5:
                     if education == node.children[i].category:
                         self.recursive_classify(record, node.children[i])
             elif node.label == "Marital Status":
-                marital_status = node.category
+                marital_status = record[3]
                 for i in range(len(node.children)):
                     if marital_status == node.children[i].category:
                         self.recursive_classify(record, node.children[i])
@@ -69,7 +69,7 @@ class C4_5:
                 else:
                     self.recursive_classify(record, node.children[1])
             elif node.label == "livesInCity":
-                lives_in_city = node.category
+                lives_in_city = record[5]
                 for i in range(len(node.children)):
                     if lives_in_city == node.children[i].category:
                         self.recursive_classify(record, node.children[i])
