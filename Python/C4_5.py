@@ -1,7 +1,8 @@
 import math
 from Node import Node
 
-#Author: Kyle Ahn
+
+# Author: Kyle Ahn
 class C4_5:
     def __init__(self, pathToData, pathToNames):
         self.filePathToData = pathToData
@@ -13,17 +14,14 @@ class C4_5:
         self.attributes = []
         self.tree = None
 
-
     # Author: Kyle Ahn
     #   Takes in a record of attributes and uses the decision tree to classify the record.
     #   Returns the class string (Low Income, Middle Income, High Income)
     def classify(self, record):
         return self.recursive_classify(record, self.tree)
 
-
-    #Kevin's job
+    # Kevin's job
     def recursive_classify(self, record, node):
-        print(node)
         if node.isLeaf:
             return node.label
         else:
@@ -31,11 +29,11 @@ class C4_5:
                 race = record[0]
                 for i in range(len(node.children)):
                     if race == node.children[i].category:
-                        self.recursive_classify(record, node.children[i])
+                        return self.recursive_classify(record, node.children[i])
             elif node.label == "Working Hours":
                 hours_worked = float(record[1])
                 if hours_worked <= node.threshold:
-                    self.recursive_classify(record, node.children[0])
+                    return self.recursive_classify(record, node.children[0])
                 else:
                     self.recursive_classify(record, node.children[1])
             elif node.label == "Education":
@@ -57,51 +55,50 @@ class C4_5:
                     education = "Doctorate Degree"
                 for i in range(len(node.children)):
                     if education == node.children[i].category:
-                        self.recursive_classify(record, node.children[i])
+                        return self.recursive_classify(record, node.children[i])
             elif node.label == "Marital Status":
                 marital_status = record[3]
                 for i in range(len(node.children)):
                     if marital_status == node.children[i].category:
-                        self.recursive_classify(record, node.children[i])
+                        return self.recursive_classify(record, node.children[i])
             elif node.label == "IsBusinessOwner":
                 if record[4] == "1":
-                    self.recursive_classify(record, node.children[0])
+                    return self.recursive_classify(record, node.children[0])
                 else:
-                    self.recursive_classify(record, node.children[1])
+                    return self.recursive_classify(record, node.children[1])
             elif node.label == "livesInCity":
                 lives_in_city = record[5]
                 for i in range(len(node.children)):
                     if lives_in_city == node.children[i].category:
-                        self.recursive_classify(record, node.children[i])
+                        return self.recursive_classify(record, node.children[i])
             elif node.label == "Medical Condition":
                 if record[5] == "0":
-                    self.recursive_classify(record, node.children[0])
+                    return self.recursive_classify(record, node.children[0])
                 else:
-                    self.recursive_classify(record, node.children[1])
+                    return self.recursive_classify(record, node.children[1])
             elif node.label == "Age":
                 age = float(record[7])
                 if age <= node.threshold:
-                    self.recursive_classify(record, node.children[0])
+                    return self.recursive_classify(record, node.children[0])
                 else:
-                    self.recursive_classify(record, node.children[1])
+                    return self.recursive_classify(record, node.children[1])
             elif node.label == "Job Begin Year":
                 job_begin_year = float(record[8])
                 if job_begin_year <= node.threshold:
-                    self.recursive_classify(record, node.children[0])
+                    return self.recursive_classify(record, node.children[0])
                 else:
-                    self.recursive_classify(record, node.children[1])
+                    return self.recursive_classify(record, node.children[1])
             elif node.label == "Sex":
                 if record[9] == "1":
-                    self.recursive_classify(record, node.children[0])
+                    return self.recursive_classify(record, node.children[0])
                 else:
-                    self.recursive_classify(record, node.children[1])
-
+                    return self.recursive_classify(record, node.children[1])
 
     def fetchData(self):
         with open(self.filePathToNames, "r") as file:
             classes = file.readline()
             self.classes = [x.strip() for x in classes.split(",")]
-            #add attributes
+            # add attributes
             for line in file:
                 [attribute, values] = [x.strip() for x in line.split(":")]
                 values = [x.strip() for x in values.split(",")]
@@ -115,11 +112,10 @@ class C4_5:
                     self.data.append(row)
 
     def preprocessData(self):
-        for index,row in enumerate(self.data):
+        for index, row in enumerate(self.data):
             for attr_index in range(self.numAttributes):
-                if(not self.isAttrDiscrete(self.attributes[attr_index])):
+                if (not self.isAttrDiscrete(self.attributes[attr_index])):
                     self.data[index][attr_index] = float(self.data[index][attr_index])
-
 
     def generateTree(self):
         self.tree = self.recursiveGenerateTree(self.data, self.attributes)
@@ -127,17 +123,17 @@ class C4_5:
     def recursiveGenerateTree(self, curData, curAttributes):
         allSame = self.allSameClass(curData)
         if len(curData) == 0:
-            #Fail
+            # Fail
             return Node(True, "Fail", None)
         elif allSame is not False:
-            #return a node with that class
+            # return a node with that class
             return Node(True, allSame, None)
         elif len(curAttributes) == 0:
-            #return a node with the majority class
+            # return a node with the majority class
             majClass = self.getMajClass(curData)
             return Node(True, majClass, None)
         else:
-            (best,best_threshold,splitted) = self.splitAttribute(curData, curAttributes)
+            (best, best_threshold, splitted) = self.splitAttribute(curData, curAttributes)
             remainingAttributes = curAttributes[:]
             remainingAttributes.remove(best)
             node = Node(False, best, best_threshold)
@@ -150,20 +146,18 @@ class C4_5:
             return node
 
     def getMajClass(self, curData):
-        freq = [0]*len(self.classes)
+        freq = [0] * len(self.classes)
         for row in curData:
             index = self.classes.index(row[-1])
             freq[index] += 1
         maxInd = freq.index(max(freq))
         return self.classes[maxInd]
 
-
     def allSameClass(self, data):
         for row in data:
             if row[-1] != data[0][-1]:
                 return False
         return data[0][-1]
-
 
     def isAttrDiscrete(self, attribute):
         if attribute not in self.attributes:
@@ -172,7 +166,6 @@ class C4_5:
             return False
         else:
             return True
-
 
     def set_category(self, child, best, subset):
         if best == 'Race':
@@ -190,19 +183,18 @@ class C4_5:
         elif best == 'Sex':
             child.category = subset[0][9]
 
-
     def splitAttribute(self, curData, curAttributes):
         splitted = []
-        maxEnt = -1*float("inf")
+        maxEnt = -1 * float("inf")
         best_attribute = -1
-        #None for discrete attributes, threshold value for continuous attributes
+        # None for discrete attributes, threshold value for continuous attributes
         best_threshold = None
         for attribute in curAttributes:
             indexOfAttribute = self.attributes.index(attribute)
             if self.isAttrDiscrete(attribute):
-                #split curData into n-subsets, where n is the number of
-                #different values of attribute i. Choose the attribute with
-                #the max gain
+                # split curData into n-subsets, where n is the number of
+                # different values of attribute i. Choose the attribute with
+                # the max gain
                 valuesForAttribute = self.attrValues[attribute]
                 subsets = [[] for attribute in valuesForAttribute]
 
@@ -220,17 +212,17 @@ class C4_5:
                     best_attribute = attribute
                     best_threshold = None
             else:
-                #sort the data according to the column.Then try all
-                #possible adjacent pairs. Choose the one that
-                #yields maximum gain
-                curData.sort(key = lambda x: x[indexOfAttribute])
+                # sort the data according to the column.Then try all
+                # possible adjacent pairs. Choose the one that
+                # yields maximum gain
+                curData.sort(key=lambda x: x[indexOfAttribute])
                 for j in range(0, len(curData) - 1):
-                    if curData[j][indexOfAttribute] != curData[j+1][indexOfAttribute]:
-                        threshold = (curData[j][indexOfAttribute] + curData[j+1][indexOfAttribute]) / 2
+                    if curData[j][indexOfAttribute] != curData[j + 1][indexOfAttribute]:
+                        threshold = (curData[j][indexOfAttribute] + curData[j + 1][indexOfAttribute]) / 2
                         less = []
                         greater = []
                         for row in curData:
-                            if(row[indexOfAttribute] > threshold):
+                            if (row[indexOfAttribute] > threshold):
                                 greater.append(row)
                             else:
                                 less.append(row)
@@ -242,22 +234,21 @@ class C4_5:
                             best_attribute = attribute
                             best_threshold = threshold
 
-        return (best_attribute,best_threshold,splitted)
+        return (best_attribute, best_threshold, splitted)
 
-
-    def gain(self,unionSet, subsets):
-        #input : data and disjoint subsets of it
-        #output : information gain
+    def gain(self, unionSet, subsets):
+        # input : data and disjoint subsets of it
+        # output : information gain
         S = len(unionSet)
-        #calculate impurity before split
+        # calculate impurity before split
         impurityBeforeSplit = self.entropy(unionSet)
         impurityBeforeSplit = self.entropy(unionSet)
-        #calculate impurity after split
-        weights = [len(subset)/S for subset in subsets]
+        # calculate impurity after split
+        weights = [len(subset) / S for subset in subsets]
         impurityAfterSplit = 0
         for i in range(len(subsets)):
-            impurityAfterSplit += weights[i]*self.entropy(subsets[i])
-        #calculate total gain
+            impurityAfterSplit += weights[i] * self.entropy(subsets[i])
+        # calculate total gain
         totalGain = impurityBeforeSplit - impurityAfterSplit
         return totalGain
 
@@ -269,30 +260,26 @@ class C4_5:
         for row in dataSet:
             classIndex = list(self.classes).index(row[-1])
             num_classes[classIndex] += 1
-        num_classes = [x/S for x in num_classes]
+        num_classes = [x / S for x in num_classes]
         ent = 0
         for num in num_classes:
-            ent += num*self.log(num)
-        return ent*-1
-
+            ent += num * self.log(num)
+        return ent * -1
 
     def log(self, x):
         if x == 0:
             return 0
         else:
-            return math.log(x,2)
-
-
+            return math.log(x, 2)
 
     def printTree(self):
         self.printNode(self.tree)
 
-
     def printNode(self, node, indent=""):
         if not node.isLeaf:
             if node.threshold is None:
-                #discrete
-                for index,child in enumerate(node.children):
+                # discrete
+                for index, child in enumerate(node.children):
                     if child.isLeaf:
                         print(indent + node.label + " = " + child.category + " : " + child.label)
                     else:
@@ -302,15 +289,14 @@ class C4_5:
                 leftChild = node.children[0]
                 rightChild = node.children[1]
 
-
                 if leftChild.isLeaf:
                     print(indent + node.label + " <= " + str(node.threshold) + " : " + leftChild.label)
                 else:
-                    print(indent + node.label + " <= " + str(node.threshold)+" : ")
+                    print(indent + node.label + " <= " + str(node.threshold) + " : ")
                     self.printNode(leftChild, indent + "	")
 
                 if rightChild.isLeaf:
                     print(indent + node.label + " > " + str(node.threshold) + " : " + rightChild.label)
                 else:
                     print(indent + node.label + " > " + str(node.threshold) + " : ")
-                    self.printNode(rightChild , indent + "	")
+                    self.printNode(rightChild, indent + "	")
