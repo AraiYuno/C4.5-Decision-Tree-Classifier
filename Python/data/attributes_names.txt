@@ -7,5 +7,5 @@ IsBusinessOwner : 1,2
 livesInCity : 0,1,2
 Medical Condition : 0,1
 Age : continuous
-Job Begin  Year : continuous
+Job Begin Year : continuous
 Sex : 1,2

@@ -87,7 +87,7 @@ def write_to_attributes_names(data, mapped_class_list):
     state = get_discrete_categories(data["State"])
     file.write("Low Income, Middle Income, High Income\nRace : 0, 1, 2, 3, 4\nWorking Hours : continuous\nEducation : "
                + education + "\nMarital Status : " + marital_status + "\nIsBusinessOwner : 1,2\nlivesInCity : 0,1,2\n"
-               + "Medical Condition : 0,1\nAge : continuous\nJob Begin  Year : continuous\nSex : 1,2")
+               + "Medical Condition : 0,1\nAge : continuous\nJob Begin Year : continuous\nSex : 1,2")
 
 
 def get_discrete_categories(column):
