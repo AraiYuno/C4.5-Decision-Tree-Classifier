@@ -1,0 +1,23 @@
+Chief Executives and Legislators:
+	Chief Executives are High Income, Legislators are Middle Income
+
+Buyers and purchasing agents:
+	BLS makes no distinction between purchasers of farm products and others
+	
+Miscellaneous Mathematical Sciences, inclusing Mathematicians and Statisticians
+	Misc. and statisticians are middle income, mathematicians are high income
+
+Miscellaneous and Nuclear Engineers:
+	Misc. engineers are middle income, nuclear engineers are high income
+	
+Embalmers and Funeral Attendants:
+	Embalmers are middle income, funeral attendants are low income
+	
+Miscellaneous Agricultural Workers, including Animal Breeders:
+	Misc. Agricultural workers are middle income, animal breeders are middle income
+	
+miscellaneous production workers, including semiconductor processors
+	Misc. is low income, semiconductor processors is middle income
+
+Military Specific Occupations
+	BLS has no data
