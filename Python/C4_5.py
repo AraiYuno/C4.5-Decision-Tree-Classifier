@@ -23,8 +23,78 @@ class C4_5:
 
     #Kevin's job
     def recursive_classify(self, record, node):
-        if node.isLeaf is True:
+        if node.isLeaf:
             return node.label
+        else:
+            if node.label == "Race":
+                race = record[0]
+                for i in range(len(node.children)):
+                    if race == node.children[i].category:
+                        return self.recursive_classify(record, node.children[i])
+            elif node.label == "Working Hours":
+                hours_worked = float(record[1])
+                if hours_worked <= node.threshold:
+                    return self.recursive_classify(record, node.children[0])
+                else:
+                    return self.recursive_classify(record, node.children[1])
+            elif node.label == "Education":
+                if record[2] == "31" or record[2] == "32" \
+                        or record[2] == "33" or record[2] == "34" or record[2] == "35" \
+                        or record[2] == "36" or record[2] == "37" or record[2] == "38":
+                    education = "No High School Diploma"
+                elif record[2] == "39":
+                    education = "High School Graduate"
+                elif record[2] == "40" or record[2] == "41" or record[2] == "42":
+                    education = "College"
+                elif record[2] == "43":
+                    education = "Bachelor's Degree"
+                elif record[2] == "44":
+                    education = "Master's Degree"
+                elif record[2] == "45":
+                    education = "MD/DDS/JD"
+                elif record[2] == "46":
+                    education = "Doctorate Degree"
+                for i in range(len(node.children)):
+                    if education == node.children[i].category:
+                        return self.recursive_classify(record, node.children[i])
+            elif node.label == "Marital Status":
+                marital_status = record[3]
+                for i in range(len(node.children)):
+                    if marital_status == node.children[i].category:
+                        return self.recursive_classify(record, node.children[i])
+            elif node.label == "IsBusinessOwner":
+                if record[4] == "1":
+                    return self.recursive_classify(record, node.children[0])
+                else:
+                    return self.recursive_classify(record, node.children[1])
+            elif node.label == "livesInCity":
+                lives_in_city = record[5]
+                for i in range(len(node.children)):
+                    if lives_in_city == node.children[i].category:
+                        return self.recursive_classify(record, node.children[i])
+            elif node.label == "Medical Condition":
+                if record[5] == "0":
+                    return self.recursive_classify(record, node.children[0])
+                else:
+                    return self.recursive_classify(record, node.children[1])
+            elif node.label == "Age":
+                age = float(record[7])
+                if age <= node.threshold:
+                    return self.recursive_classify(record, node.children[0])
+                else:
+                    return self.recursive_classify(record, node.children[1])
+            elif node.label == "Job Begin Year":
+                job_begin_year = float(record[8])
+                if job_begin_year <= node.threshold:
+                    return self.recursive_classify(record, node.children[0])
+                else:
+                    return self.recursive_classify(record, node.children[1])
+            elif node.label == "Sex":
+                if record[9] == "1":
+                    return self.recursive_classify(record, node.children[0])
+                else:
+                    return self.recursive_classify(record, node.children[1])
+
 
     def fetchData(self):
         with open(self.filePathToNames, "r") as file:

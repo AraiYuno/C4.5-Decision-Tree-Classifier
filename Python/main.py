@@ -113,16 +113,16 @@ def classify_record(c45_tree):
     data = read_in_file("./data/testing_data.csv")
     for i in range(len(data["Race"])):
         record = []
-        record.append(data["Race"][i])
+        record.append("R" + data["Race"][i])
         record.append(data["Working Hours"][i])
         record.append(data["Education"][i])
         record.append(data["Marital Status"][i])
-        record.append(data["IsBusinessOwner"][i])
-        record.append(data["livesInCity"][i])
-        record.append(data["Medical Condition"][i])
+        record.append("B" + data["IsBusinessOwner"][i])
+        record.append("L" + data["livesInCity"][i])
+        record.append("M" + data["Medical Condition"][i])
         record.append(data["Age"][i])
         record.append(data["Job Begin Year"][i])
-        record.append(data["Sex"][i])
+        record.append("S" + data["Sex"][i])
         income_level = c45_tree.classify(record)
         print(income_level)
 
