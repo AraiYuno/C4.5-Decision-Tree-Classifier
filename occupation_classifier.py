@@ -2,10 +2,12 @@ import csv
 
 _OCCUPATION_DATA_FILEPATH = './data/occupation_incomes.csv'
 _OUTPUT_FILEPATH = './data/occupation_incomes_classed.csv'
-_LOW_CUTOFF_PERCENTAGE = 66
-_HIGH_CUTOFF_PERCENTAGE = 200
-_HOURLY_MEAN_INDEX = 6
-_ANNUAL_MEAN_INDEX = 7
+_HOURLY_25PCT_INDEX = 9
+_HOURLY_MEDIAN_INDEX = 10
+_HOURLY_75PCT_INDEX = 11
+_ANNUAL_25PCT_INDEX = 14
+_ANNUAL_MEDIAN_INDEX = 15
+_ANNUAL_75PCT_INDEX = 16
 _HOURLY_ONLY_INDEX = 20
 
 class Occupation_Classifier:
@@ -25,13 +27,10 @@ class Occupation_Classifier:
 
     # Choose the class cut-offs based off of the given entry
     def choose_cutoffs( self, entry ):
-        universe_annual_mean = self.get_float(entry, _ANNUAL_MEAN_INDEX)
-        universe_hourly_mean = self.get_float(entry, _HOURLY_MEAN_INDEX)
-
-        self.low_cutoff_annual = universe_annual_mean * (_LOW_CUTOFF_PERCENTAGE / 100)
-        self.high_cutoff_annual = universe_annual_mean * (_HIGH_CUTOFF_PERCENTAGE / 100)
-        self.low_cutoff_hourly = universe_hourly_mean * (_LOW_CUTOFF_PERCENTAGE / 100)
-        self.high_cutoff_hourly = universe_hourly_mean * (_HIGH_CUTOFF_PERCENTAGE / 100)
+        self.low_cutoff_annual = self.get_float(entry, _ANNUAL_25PCT_INDEX)
+        self.high_cutoff_annual = self.get_float(entry, _ANNUAL_75PCT_INDEX)
+        self.low_cutoff_hourly = self.get_float(entry, _HOURLY_25PCT_INDEX)
+        self.high_cutoff_hourly = self.get_float(entry, _HOURLY_75PCT_INDEX)
 
     def classify_incomes( self ):
         with open(self.input_path, 'r') as input:
@@ -54,21 +53,21 @@ class Occupation_Classifier:
                 # classify all occupations based on wages
                 for entry in reader:
                     # use hourly wages if annual wages aren't available
-                    if (entry[_HOURLY_ONLY_INDEX] == 'True'):
-                        mean_wage = self.get_float(entry, _HOURLY_MEAN_INDEX)
+                    if (entry[_HOURLY_ONLY_INDEX].lower() == 'true'):
+                        median_wage = self.get_float(entry, _HOURLY_MEDIAN_INDEX)
                         low_cutoff = self.low_cutoff_hourly
                         high_cutoff = self.high_cutoff_hourly
                     else:
-                        mean_wage = self.get_float(entry, _ANNUAL_MEAN_INDEX)
+                        median_wage = self.get_float(entry, _ANNUAL_MEDIAN_INDEX)
                         low_cutoff = self.low_cutoff_annual
                         high_cutoff = self.high_cutoff_annual
 
-                    if mean_wage < low_cutoff:
-                        entry.append(self.classes[2])
-                    elif mean_wage > high_cutoff:
-                        entry.append(self.classes[0])
+                    if median_wage < low_cutoff:
+                        entry.append(self.classes[2]) # Low Income
+                    elif median_wage > high_cutoff:
+                        entry.append(self.classes[0]) # High Income
                     else:
-                        entry.append(self.classes[1])
+                        entry.append(self.classes[1]) # Middle Income
 
                     processed_data.append(entry)
 
