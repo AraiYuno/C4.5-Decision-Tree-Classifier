@@ -70,9 +70,9 @@ def write_to_attributes_data(data, mapped_class_list):
                 education = "Doctorate Degree"
 
             file.write(
-                data["Race"][i] + "," + data["Working Hours"][i] + "," + education + "," + data["Marital Status"][i]
-                + "," + data["IsBusinessOwner"][i] + "," + data["livesInCity"][i] + "," + medical_condition
-                + "," + data["Age"][i] + "," + data["Job Begin Year"][i] + "," + data["Sex"][i]
+                "R" + data["Race"][i] + "," + data["Working Hours"][i] + "," + education + "," + data["Marital Status"][i]
+                + "," + "B" + data["IsBusinessOwner"][i] + "," + "L" + data["livesInCity"][i] + "," + "M" + medical_condition
+                + "," + data["Age"][i] + "," + data["Job Begin Year"][i] + "," + "S" + data["Sex"][i]
                 + "," + mapped_class_list[i] + "\n")
 
 
@@ -85,9 +85,9 @@ def write_to_attributes_names(data, mapped_class_list):
     marital_status = get_discrete_categories(data["Marital Status"])
     medical_condition = get_discrete_categories(data["Medical Condition"])
     state = get_discrete_categories(data["State"])
-    file.write("Low Income, Middle Income, High Income\nRace : 0, 1, 2, 3, 4\nWorking Hours : continuous\nEducation : "
-               + education + "\nMarital Status : " + marital_status + "\nIsBusinessOwner : 1,2\nlivesInCity : 0,1,2\n"
-               + "Medical Condition : 0,1\nAge : continuous\nJob Begin  Year : continuous\nSex : 1,2")
+    file.write("Low Income, Middle Income, High Income\nRace : R0, R1, R2, R3, R4\nWorking Hours : continuous\nEducation : "
+               + education + "\nMarital Status : " + marital_status + "\nIsBusinessOwner : B1,B2\nlivesInCity : L0,L1,L2\n"
+               + "Medical Condition : M0,M1\nAge : continuous\nJob Begin  Year : continuous\nSex : S1,S2")
 
 
 def get_discrete_categories(column):
@@ -111,8 +111,8 @@ def get_discrete_categories(column):
 
 def classify_record(c45_tree):
     data = read_in_file("./data/testing_data.csv")
-    record = []
     for i in range(len(data["Race"])):
+        record = []
         record.append(data["Race"][i])
         record.append(data["Working Hours"][i])
         record.append(data["Education"][i])
@@ -123,8 +123,8 @@ def classify_record(c45_tree):
         record.append(data["Age"][i])
         record.append(data["Job Begin Year"][i])
         record.append(data["Sex"][i])
-    income_level = c45_tree.classify(record)
-    print(income_level)
+        income_level = c45_tree.classify(record)
+        print(income_level)
 
 
 def test_data():

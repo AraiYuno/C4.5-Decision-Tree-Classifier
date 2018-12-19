@@ -23,13 +23,8 @@ class C4_5:
 
     #Kevin's job
     def recursive_classify(self, record, node):
-        print(node)
-        if node.isLeaf:
+        if node.isLeaf is True:
             return node.label
-        else:
-            for i in range(len(record)):
-                print(record)
-
 
     def fetchData(self):
         with open(self.filePathToNames, "r") as file:
@@ -47,6 +42,7 @@ class C4_5:
                 row = [x.strip() for x in line.split(",")]
                 if row != [] or row != [""]:
                     self.data.append(row)
+
 
     def preprocessData(self):
         for index,row in enumerate(self.data):
