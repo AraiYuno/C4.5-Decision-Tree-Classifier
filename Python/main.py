@@ -73,7 +73,7 @@ def write_to_attributes_data(data, mapped_class_list):
                 "R" + data["Race"][i] + "," + data["Working Hours"][i] + "," + education + "," + data["Marital Status"][i]
                 + "," + "B" + data["IsBusinessOwner"][i] + "," + "L" + data["livesInCity"][i] + "," + "M" + medical_condition
                 + "," + data["Age"][i] + "," + data["Job Begin Year"][i] + "," + "S" + data["Sex"][i]
-                + "," + mapped_class_list[i] + "\n")
+                + "," + "F" + data["Family Number"][i] + "," + mapped_class_list[i] + "\n")
 
 
 def write_to_attributes_names(data, mapped_class_list):
@@ -84,7 +84,8 @@ def write_to_attributes_names(data, mapped_class_list):
                 "MD/DDS/JD,Doctorate Degree"
     file.write("Low Income, Middle Income, High Income\nRace : R0, R1, R2, R3, R4\nWorking Hours : continuous\nEducation : "
                + education + "\nMarital Status : " + "1,2,3,4,5,6" + "\nIsBusinessOwner : B1,B2\nlivesInCity : L0,L1,L2\n"
-               + "Medical Condition : M0,M1\nAge : continuous\nJob Begin  Year : continuous\nSex : S1,S2")
+               + "Medical Condition : M0,M1\nAge : continuous\nJob Begin  Year : continuous\nSex : S1,S2\n"
+               + "Family Number : F1,F2,F3,F4")
 
 
 def get_discrete_categories(column):
@@ -120,6 +121,7 @@ def classify_record(c45_tree):
         record.append(data["Age"][i])
         record.append(data["Job Begin Year"][i])
         record.append("S" + data["Sex"][i])
+        record.append("F" + data["Family Number"][i])
         income_level = c45_tree.classify(record)
         print(income_level)
 

@@ -9,3 +9,4 @@ Medical Condition : M0,M1
 Age : continuous
 Job Begin  Year : continuous
 Sex : S1,S2
+Family Number : F1,F2,F3,F4
