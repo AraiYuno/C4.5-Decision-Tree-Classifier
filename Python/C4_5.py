@@ -95,11 +95,6 @@ class C4_5:
                     return self.recursive_classify(record, node.children[0])
                 else:
                     return self.recursive_classify(record, node.children[1])
-            elif node.label == "Family Number":
-                family_number = record[10]
-                for i in range(len(node.children)):
-                    if family_number == node.children[i].category:
-                        return self.recursive_classify(record, node.children[i])
 
 
     def fetchData(self):
@@ -203,8 +198,6 @@ class C4_5:
                 child.category = subset[0][6]
             elif best == 'Sex':
                 child.category = subset[0][9]
-            elif best == 'Family Number':
-                child.category = subset[0][10]
         else:
             if best == 'Race':
                 child.category = 'R' + str(index)
@@ -233,8 +226,6 @@ class C4_5:
                 child.category = "M" + str(index)
             elif best == 'Sex':
                 child.category = "S" + str(index + 1)
-            elif best == 'Family Number':
-                child.category = 'F' + str(index + 1)
 
 
     def splitAttribute(self, curData, curAttributes):
