@@ -2,7 +2,7 @@ Low Income, Middle Income, High Income
 Race : R0, R1, R2, R3, R4
 Working Hours : continuous
 Education : No High School Diploma,High School Graduate,College,Bachelor's Degree,Master's Degree,MD/DDS/JD,Doctorate Degree
-Marital Status : 1,6,4,3,2,5
+Marital Status : 1,2,3,4,5,6
 IsBusinessOwner : B1,B2
 livesInCity : L0,L1,L2
 Medical Condition : M0,M1

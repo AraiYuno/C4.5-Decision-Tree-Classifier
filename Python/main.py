@@ -17,7 +17,7 @@ def read_in_file(path):
 
 def train_data():
     data = read_in_file("./data/training_data.csv")
-    income_class = read_in_file("./data/occupation_classes.csv")
+    income_class = read_in_file("./data/occupation_classes_new.csv")
     mapped_class_list = []
     for occupation_value in data["Occupation"]:
         income_level = find_income_level(occupation_value, income_class)
@@ -82,11 +82,8 @@ def write_to_attributes_names(data, mapped_class_list):
     file = open("./data/attributes_names.txt", "w+")
     education = "No High School Diploma,High School Graduate,College,Bachelor's Degree,Master's Degree," \
                 "MD/DDS/JD,Doctorate Degree"
-    marital_status = get_discrete_categories(data["Marital Status"])
-    medical_condition = get_discrete_categories(data["Medical Condition"])
-    state = get_discrete_categories(data["State"])
     file.write("Low Income, Middle Income, High Income\nRace : R0, R1, R2, R3, R4\nWorking Hours : continuous\nEducation : "
-               + education + "\nMarital Status : " + marital_status + "\nIsBusinessOwner : B1,B2\nlivesInCity : L0,L1,L2\n"
+               + education + "\nMarital Status : " + "1,2,3,4,5,6" + "\nIsBusinessOwner : B1,B2\nlivesInCity : L0,L1,L2\n"
                + "Medical Condition : M0,M1\nAge : continuous\nJob Begin  Year : continuous\nSex : S1,S2")
 
 

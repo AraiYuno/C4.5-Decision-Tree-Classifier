@@ -1,0 +1,476 @@
+value,occ_title,class
+10,chief executives and legislators,Middle Income
+20,general and operations managers,High Income
+40,advertising and promotions managers,High Income
+50,marketing and sales managers,High Income
+60,public relations and fundraising managers,High Income
+100,administrative services managers,High Income
+110,computer and information systems managers,High Income
+120,financial managers,High Income
+135,compensation and benefits managers,High Income
+136,human resources managers,High Income
+137,training and development managers,High Income
+140,industrial production managers,High Income
+150,purchasing managers,High Income
+160,"transportation, storage, and distribution managers",High Income
+205,"farmers, ranchers, and other agricultural managers",High Income
+220,construction managers,High Income
+230,education administrators,High Income
+300,architectural and engineering managers,High Income
+310,food service managers,High Income
+330,gaming managers,High Income
+340,lodging managers,Middle Income
+350,medical and health services managers,High Income
+360,natural sciences managers,High Income
+410,"property, real estate, and community association managers",High Income
+420,social and community service managers,High Income
+425,emergency management directors,High Income
+430,"miscellaneous managers, including funeral service managers and postmasters and mail superintendents",High Income
+500,"agents and business managers of artists, performers, and athletes",High Income
+510,"buyers and purchasing agents, farm products",High Income
+520,"wholesale and retail buyers, except farm products",High Income
+530,"purchasing agents, except wholesale, retail, and farm products",High Income
+540,"claims adjusters, appraisers, examiners, and investigators",High Income
+565,compliance officers,High Income
+600,cost estimators,High Income
+630,human resources workers,High Income
+640,"compensation, benefits, and job analysis specialists",High Income
+650,training and development specialists,High Income
+700,logisticians,High Income
+710,management analysts,High Income
+725,"meeting, convention, and event planners",Middle Income
+726,fundraisers,High Income
+735,market research analysts and marketing specialists,High Income
+740,"business operations specialists, all other",High Income
+800,accountants and auditors,High Income
+810,appraisers and assessors of real estate,High Income
+820,budget analysts,High Income
+830,credit analysts,High Income
+840,financial analysts,High Income
+850,personal financial advisors,High Income
+860,insurance underwriters,High Income
+900,financial examiners,High Income
+910,credit counselors and loan officers,High Income
+930,"tax examiners and collectors, and revenue agents",High Income
+940,tax preparers,Middle Income
+950,"financial specialists, all other",High Income
+1005,computer and information research scientists,High Income
+1006,computer systems analysts,High Income
+1007,information security analysts,High Income
+1010,computer programmers,High Income
+1020,"software developers, applications and systems software",High Income
+1030,web developers,High Income
+1050,computer support specialists,High Income
+1060,database administrators,High Income
+1105,network and computer systems administrators,High Income
+1106,computer network architects,High Income
+1107,"computer occupations, all other",High Income
+1200,actuaries,High Income
+1220,operations research analysts,High Income
+1240,"miscellaneous mathematical science occupations, including mathematicians and statisticians",High Income
+1300,"architects, except naval",High Income
+1310,"surveyors, cartographers, and photogrammetrists",High Income
+1320,aerospace engineers,High Income
+1340,biomedical and agricultural engineers,High Income
+1350,chemical engineers,High Income
+1360,civil engineers,High Income
+1400,computer hardware engineers,High Income
+1410,electrical and electronics engineers,High Income
+1420,environmental engineers,High Income
+1430,"industrial engineers, including health and safety",High Income
+1440,marine engineers and naval architects,High Income
+1450,materials engineers,High Income
+1460,mechanical engineers,High Income
+1520,"petroleum, mining and geological engineers, including mining safety engineers",High Income
+1530,"miscellaneous engineers, including nuclear engineers",High Income
+1540,drafters,High Income
+1550,"engineering technicians, except drafters",High Income
+1560,surveying and mapping technicians,Middle Income
+1600,agricultural and food scientists,High Income
+1610,biological scientists,High Income
+1640,conservation scientists and foresters,High Income
+1650,"medical scientists, and life scientists, all other",High Income
+1700,astronomers and physicists,High Income
+1710,atmospheric and space scientists,High Income
+1720,chemists and materials scientists,High Income
+1740,environmental scientists and geoscientists,High Income
+1760,"physical scientists, all other",High Income
+1800,economists,High Income
+1820,psychologists,High Income
+1840,urban and regional planners,High Income
+1860,"miscellaneous social scientists, including survey researchers and sociologists",High Income
+1900,agricultural and food science technicians,Middle Income
+1910,biological technicians,Middle Income
+1920,chemical technicians,Middle Income
+1930,"geological and petroleum technicians, and nuclear technicians",Middle Income
+1965,"miscellaneous life, physical, and social science technicians, including social science research assistants",Middle Income
+2000,counselors,Middle Income
+2010,social workers,Middle Income
+2015,probation officers and correctional treatment specialists,High Income
+2016,social and human service assistants,Middle Income
+2025,"miscellaneous community and social service specialists, including health educators and community health workers",Middle Income
+2040,clergy,Middle Income
+2050,"directors, religious activities and education",Middle Income
+2060,"religious workers, all other",Middle Income
+2100,"lawyers, and judges, magistrates, and other judicial workers",High Income
+2105,judicial law clerks,High Income
+2145,paralegals and legal assistants,High Income
+2160,miscellaneous legal support workers,Middle Income
+2200,postsecondary teachers,High Income
+2300,preschool and kindergarten teachers,Middle Income
+2310,elementary and middle school teachers,High Income
+2320,secondary school teachers,High Income
+2330,special education teachers,High Income
+2340,other teachers and instructors,Middle Income
+2400,"archivists, curators, and museum technicians",Middle Income
+2430,librarians,High Income
+2440,library technicians,Middle Income
+2540,teacher assistants,Middle Income
+2550,"other education, training, and library workers",Middle Income
+2600,artists and related workers,High Income
+2630,designers,Middle Income
+2700,actors,Middle Income
+2710,producers and directors,High Income
+2720,"athletes, coaches, umpires, and related workers",Middle Income
+2740,dancers and choreographers,Middle Income
+2750,"musicians, singers, and related workers",Middle Income
+2760,"entertainers and performers, sports and related workers, all other",Middle Income
+2800,announcers,Middle Income
+2810,"news analysts, reporters and correspondents",Middle Income
+2825,public relations specialists,High Income
+2830,editors,High Income
+2840,technical writers,High Income
+2850,writers and authors,High Income
+2860,miscellaneous media and communication workers,Middle Income
+2900,"broadcast and sound engineering technicians and radio operators, and media and communication equipment workers, all other",Middle Income
+2910,photographers,Middle Income
+2920,"television, video, and motion picture camera operators and editors",High Income
+3000,chiropractors,High Income
+3010,dentists,High Income
+3030,dietitians and nutritionists,High Income
+3040,optometrists,High Income
+3050,pharmacists,High Income
+3060,physicians and surgeons,High Income
+3110,physician assistants,High Income
+3120,podiatrists,High Income
+3140,audiologists,High Income
+3150,occupational therapists,High Income
+3160,physical therapists,High Income
+3200,radiation therapists,High Income
+3210,recreational therapists,Middle Income
+3220,respiratory therapists,High Income
+3230,speech-language pathologists,High Income
+3245,"other therapists, including exercise physiologists",High Income
+3250,veterinarians,High Income
+3255,registered nurses,High Income
+3256,nurse anesthetists,High Income
+3258,nurse practitioners and nurse midwives,High Income
+3260,"health diagnosing and treating practitioners, all other",High Income
+3300,clinical laboratory technologists and technicians,High Income
+3310,dental hygienists,High Income
+3320,diagnostic related technologists and technicians,High Income
+3400,emergency medical technicians and paramedics,Middle Income
+3420,health practitioner support technologists and technicians,Middle Income
+3500,licensed practical and licensed vocational nurses,High Income
+3510,medical records and health information technicians,Middle Income
+3520,"opticians, dispensing",Middle Income
+3535,miscellaneous health technologists and technicians,Middle Income
+3540,other healthcare practitioners and technical occupations,High Income
+3600,"nursing, psychiatric, and home health aides",Middle Income
+3610,occupational therapy assistants and aides,High Income
+3620,physical therapist assistants and aides,Middle Income
+3630,massage therapists,Middle Income
+3640,dental assistants,Middle Income
+3645,medical assistants,Middle Income
+3646,medical transcriptionists,Middle Income
+3647,pharmacy aides,Middle Income
+3648,veterinary assistants and laboratory animal caretakers,Middle Income
+3649,phlebotomists,Middle Income
+3655,"healthcare support workers, all other, including medical equipment preparers",Middle Income
+3700,first-line supervisors of correctional officers,High Income
+3710,first-line supervisors of police and detectives,High Income
+3720,first-line supervisors of fire fighting and prevention workers,High Income
+3730,"first-line supervisors of protective service workers, all other",Middle Income
+3740,firefighters,Middle Income
+3750,fire inspectors,High Income
+3800,"bailiffs, correctional officers, and jailers",Middle Income
+3820,detectives and criminal investigators,High Income
+3840,miscellaneous law enforcement workers,High Income
+3850,police officers,High Income
+3900,animal control workers,Middle Income
+3910,private detectives and investigators,Middle Income
+3930,security guards and gaming surveillance officers,Middle Income
+3940,crossing guards,Middle Income
+3945,transportation security screeners,Middle Income
+3955,"lifeguards and other recreational, and all other protective service workers",Middle Income
+4000,chefs and head cooks,Middle Income
+4010,first-line supervisors of food preparation and serving workers,Middle Income
+4020,cooks,Middle Income
+4030,food preparation workers,Low Income
+4040,bartenders,Low Income
+4050,"combined food preparation and serving workers, including fast food",Low Income
+4060,"counter attendants, cafeteria, food concession, and coffee shop",Low Income
+4110,waiters and waitresses,Low Income
+4120,"food servers, nonrestaurant",Low Income
+4130,"miscellaneous food preparation and serving related workers, including dining room and cafeteria attendants and bartender helpers",Low Income
+4140,dishwashers,Low Income
+4150,"hosts and hostesses, restaurant, lounge, and coffee shop",Low Income
+4200,first-line supervisors of housekeeping and janitorial workers,Middle Income
+4210,"first-line supervisors of landscaping, lawn service, and groundskeeping workers",Middle Income
+4220,janitors and building cleaners,Middle Income
+4230,maids and housekeeping cleaners,Low Income
+4240,pest control workers,Middle Income
+4250,grounds maintenance workers,Middle Income
+4300,first-line supervisors of gaming workers,Middle Income
+4320,first-line supervisors of personal service workers,Middle Income
+4340,animal trainers,Middle Income
+4350,nonfarm animal caretakers,Low Income
+4400,gaming services workers,Low Income
+4410,motion picture projectionists,Low Income
+4420,"ushers, lobby attendants, and ticket takers",Low Income
+4430,miscellaneous entertainment attendants and related workers,Low Income
+4460,embalmers and funeral attendants,Middle Income
+4465,"morticians, undertakers, and funeral directors",High Income
+4500,barbers,Middle Income
+4510,"hairdressers, hairstylists, and cosmetologists",Middle Income
+4520,miscellaneous personal appearance workers,Middle Income
+4530,"baggage porters, bellhops, and concierges",Middle Income
+4540,tour and travel guides,Middle Income
+4600,childcare workers,Low Income
+4610,personal care aides,Middle Income
+4620,recreation and fitness workers,Middle Income
+4640,residential advisors,Middle Income
+4650,"personal care and service workers, all other",Middle Income
+4700,first-line supervisors of retail sales workers,Middle Income
+4710,first-line supervisors of non-retail sales workers,High Income
+4720,cashiers,Low Income
+4740,counter and rental clerks,Middle Income
+4750,parts salespersons,Middle Income
+4760,retail salespersons,Low Income
+4800,advertising sales agents,Middle Income
+4810,insurance sales agents,Middle Income
+4820,"securities, commodities, and financial services sales agents",High Income
+4830,travel agents,Middle Income
+4840,"sales representatives, services, all other",Middle Income
+4850,"sales representatives, wholesale and manufacturing",High Income
+4900,"models, demonstrators, and product promoters",Middle Income
+4920,real estate brokers and sales agents,Middle Income
+4930,sales engineers,High Income
+4940,telemarketers,Middle Income
+4950,"door-to-door sales workers, news and street vendors, and related workers",Middle Income
+4965,"sales and related workers, all other",Middle Income
+5000,first-line supervisors of office and administrative support workers,High Income
+5010,"switchboard operators, including answering service",Middle Income
+5020,telephone operators,Middle Income
+5030,"communications equipment operators, all other",Middle Income
+5100,bill and account collectors,Middle Income
+5110,billing and posting clerks,Middle Income
+5120,"bookkeeping, accounting, and auditing clerks",Middle Income
+5130,gaming cage workers,Middle Income
+5140,payroll and timekeeping clerks,Middle Income
+5150,procurement clerks,Middle Income
+5160,tellers,Middle Income
+5165,"financial clerks, all other",Middle Income
+5200,brokerage clerks,High Income
+5220,"court, municipal, and license clerks",Middle Income
+5230,"credit authorizers, checkers, and clerks",Middle Income
+5240,customer service representatives,Middle Income
+5250,"eligibility interviewers, government programs",Middle Income
+5260,file clerks,Middle Income
+5300,"hotel, motel, and resort desk clerks",Low Income
+5310,"interviewers, except eligibility and loan",Middle Income
+5320,"library assistants, clerical",Middle Income
+5330,loan interviewers and clerks,Middle Income
+5340,new accounts clerks,Middle Income
+5350,correspondence clerks and order clerks,Middle Income
+5360,"human resources assistants, except payroll and timekeeping",Middle Income
+5400,receptionists and information clerks,Middle Income
+5410,reservation and transportation ticket agents and travel clerks,Middle Income
+5420,"information and record clerks, all other",Middle Income
+5500,cargo and freight agents,Middle Income
+5510,couriers and messengers,Middle Income
+5520,dispatchers,Middle Income
+5530,"meter readers, utilities",Middle Income
+5540,postal service clerks,High Income
+5550,postal service mail carriers,Middle Income
+5560,"postal service mail sorters, processors, and processing machine operators",High Income
+5600,"production, planning, and expediting clerks",Middle Income
+5610,"shipping, receiving, and traffic clerks",Middle Income
+5620,stock clerks and order fillers,Middle Income
+5630,"weighers, measurers, checkers, and samplers, recordkeeping",Middle Income
+5700,secretaries and administrative assistants,Middle Income
+5800,computer operators,Middle Income
+5810,data entry keyers,Middle Income
+5820,word processors and typists,Middle Income
+5840,insurance claims and policy processing clerks,Middle Income
+5850,"mail clerks and mail machine operators, except postal service",Middle Income
+5860,"office clerks, general",Middle Income
+5900,"office machine operators, except computer",Middle Income
+5910,proofreaders and copy markers,Middle Income
+5920,statistical assistants,High Income
+5940,"miscellaneous office and administrative support workers, including desktop publishers",Middle Income
+6005,"first-line supervisors of farming, fishing, and forestry workers",Middle Income
+6010,agricultural inspectors,Middle Income
+6040,"graders and sorters, agricultural products",Middle Income
+6050,"miscellaneous agricultural workers, including animal breeders",Middle Income
+6100,fishing and hunting workers,Middle Income
+6120,forest and conservation workers,Middle Income
+6130,logging workers,Middle Income
+6200,first-line supervisors of construction trades and extraction workers,High Income
+6210,boilermakers,High Income
+6220,"brickmasons, blockmasons, stonemasons, and reinforcing iron and rebar workers",Middle Income
+6230,carpenters,Middle Income
+6240,"carpet, floor, and tile installers and finishers",Middle Income
+6250,"cement masons, concrete finishers, and terrazzo workers",Middle Income
+6260,construction laborers,Middle Income
+6300,"paving, surfacing, and tamping equipment operators",Middle Income
+6320,"construction equipment operators except paving, surfacing, and tamping equipment operators",Middle Income
+6330,"drywall installers, ceiling tile installers, and tapers",Middle Income
+6355,electricians,High Income
+6360,glaziers,Middle Income
+6400,insulation workers,Middle Income
+6420,painters and paperhangers,Middle Income
+6440,"pipelayers, plumbers, pipefitters, and steamfitters",High Income
+6460,plasterers and stucco masons,Middle Income
+6515,roofers,Middle Income
+6520,sheet metal workers,Middle Income
+6530,structural iron and steel workers,High Income
+6600,"helpers, construction trades",Middle Income
+6660,construction and building inspectors,High Income
+6700,elevator installers and repairers,High Income
+6710,fence erectors,Middle Income
+6720,hazardous materials removal workers,Middle Income
+6730,highway maintenance workers,Middle Income
+6740,rail-track laying and maintenance equipment operators,High Income
+6765,"miscellaneous construction workers, including solar photovoltaic installers, septic tank servicers and sewer pipe cleaners",Middle Income
+6800,"derrick, rotary drill, and service unit operators, and roustabouts, oil, gas, and mining",Middle Income
+6820,"earth drillers, except oil and gas",Middle Income
+6830,"explosives workers, ordnance handling experts, and blasters",High Income
+6840,mining machine operators,High Income
+6940,"miscellaneous extraction workers, including roof bolters and helpers",Middle Income
+7000,"first-line supervisors of mechanics, installers, and repairers",High Income
+7010,"computer, automated teller, and office machine repairers",Middle Income
+7020,radio and telecommunications equipment installers and repairers,High Income
+7030,avionics technicians,High Income
+7040,"electric motor, power tool, and related repairers",Middle Income
+7100,"electrical and electronics repairers, transportation equipment, and industrial and utility",High Income
+7110,"electronic equipment installers and repairers, motor vehicles",Middle Income
+7120,electronic home entertainment equipment installers and repairers,Middle Income
+7130,security and fire alarm systems installers,Middle Income
+7140,aircraft mechanics and service technicians,High Income
+7150,automotive body and related repairers,Middle Income
+7160,automotive glass installers and repairers,Middle Income
+7200,automotive service technicians and mechanics,Middle Income
+7210,bus and truck mechanics and diesel engine specialists,Middle Income
+7220,heavy vehicle and mobile equipment service technicians and mechanics,High Income
+7240,small engine mechanics,Middle Income
+7260,"miscellaneous vehicle and mobile equipment mechanics, installers, and repairers",Middle Income
+7300,control and valve installers and repairers,Middle Income
+7315,"heating, air conditioning, and refrigeration mechanics and installers",Middle Income
+7320,home appliance repairers,Middle Income
+7330,industrial and refractory machinery mechanics,High Income
+7340,"maintenance and repair workers, general",Middle Income
+7350,"maintenance workers, machinery",Middle Income
+7360,millwrights,High Income
+7410,electrical power-line installers and repairers,High Income
+7420,telecommunications line installers and repairers,Middle Income
+7430,precision instrument and equipment repairers,Middle Income
+7510,"coin, vending, and amusement machine servicers and repairers",Middle Income
+7540,locksmiths and safe repairers,Middle Income
+7560,riggers,Middle Income
+7610,"helpers--installation, maintenance, and repair workers",Middle Income
+7630,"miscellaneous installation, maintenance, and repair workers, including wind turbine service technicians",Middle Income
+7700,first-line supervisors of production and operating workers,High Income
+7710,"aircraft structure, surfaces, rigging, and systems assemblers",High Income
+7720,"electrical, electronics, and electromechanical assemblers",Middle Income
+7730,engine and other machine assemblers,Middle Income
+7740,structural metal fabricators and fitters,Middle Income
+7750,miscellaneous assemblers and fabricators,Middle Income
+7800,bakers,Middle Income
+7810,"butchers and other meat, poultry, and fish processing workers",Middle Income
+7830,"food and tobacco roasting, baking, and drying machine operators and tenders",Middle Income
+7840,food batchmakers,Middle Income
+7850,food cooking machine operators and tenders,Middle Income
+7855,"food processing workers, all other",Middle Income
+7900,computer control programmers and operators,Middle Income
+7920,"extruding and drawing machine setters, operators, and tenders, metal and plastic",Middle Income
+7930,"forging machine setters, operators, and tenders, metal and plastic",Middle Income
+7940,"rolling machine setters, operators, and tenders, metal and plastic",Middle Income
+7950,"machine tool cutting setters, operators, and tenders, metal and plastic",Middle Income
+8030,machinists,Middle Income
+8040,"metal furnace operators, tenders, pourers, and casters",Middle Income
+8100,"model makers, patternmakers, and molding machine setters, metal and plastic",Middle Income
+8130,tool and die makers,High Income
+8140,"welding, soldering, and brazing workers",Middle Income
+8220,"miscellaneous metal workers and plastic workers, including multiple machine tool setters",Middle Income
+8250,prepress technicians and workers,Middle Income
+8255,printing press operators,Middle Income
+8256,print binding and finishing workers,Middle Income
+8300,laundry and dry-cleaning workers,Low Income
+8310,"pressers, textile, garment, and related materials",Low Income
+8320,sewing machine operators,Middle Income
+8330,shoe and leather workers,Middle Income
+8350,"tailors, dressmakers, and sewers",Middle Income
+8400,"textile bleaching and dyeing, and cutting machine setters, operators, and tenders",Middle Income
+8410,"textile knitting and weaving machine setters, operators, and tenders",Middle Income
+8420,"textile winding, twisting, and drawing out machine setters, operators, and tenders",Middle Income
+8450,upholsterers,Middle Income
+8460,"miscellaneous textile, apparel, and furnishings workers except upholsterers",Middle Income
+8500,cabinetmakers and bench carpenters,Middle Income
+8510,furniture finishers,Middle Income
+8530,"sawing machine setters, operators, and tenders, wood",Middle Income
+8540,"woodworking machine setters, operators, and tenders, except sawing",Middle Income
+8550,"miscellaneous woodworkers, including model makers and patternmakers",Middle Income
+8600,"power plant operators, distributors, and dispatchers",High Income
+8610,stationary engineers and boiler operators,High Income
+8620,water and wastewater treatment plant and system operators,Middle Income
+8630,miscellaneous plant and system operators,High Income
+8640,"chemical processing machine setters, operators, and tenders",Middle Income
+8650,"crushing, grinding, polishing, mixing, and blending workers",Middle Income
+8710,cutting workers,Middle Income
+8720,"extruding, forming, pressing, and compacting machine setters, operators, and tenders",Middle Income
+8730,"furnace, kiln, oven, drier, and kettle operators and tenders",Middle Income
+8740,"inspectors, testers, sorters, samplers, and weighers",Middle Income
+8750,jewelers and precious stone and metal workers,Middle Income
+8760,"medical, dental, and ophthalmic laboratory technicians",Middle Income
+8800,packaging and filling machine operators and tenders,Middle Income
+8810,painting workers,Middle Income
+8830,photographic process workers and processing machine operators,Middle Income
+8850,adhesive bonding machine operators and tenders,Middle Income
+8910,etchers and engravers,Middle Income
+8920,"molders, shapers, and casters, except metal and plastic",Middle Income
+8930,"paper goods machine setters, operators, and tenders",Middle Income
+8940,tire builders,Middle Income
+8950,helpers--production workers,Middle Income
+8965,"miscellaneous production workers, including semiconductor processors",Middle Income
+9000,supervisors of transportation and material moving workers,High Income
+9030,aircraft pilots and flight engineers,High Income
+9040,air traffic controllers and airfield operations specialists,High Income
+9050,flight attendants,High Income
+9110,"ambulance drivers and attendants, except emergency medical technicians",Middle Income
+9120,bus drivers,Middle Income
+9130,driver/sales workers and truck drivers,Middle Income
+9140,taxi drivers and chauffeurs,Middle Income
+9150,"motor vehicle operators, all other",Middle Income
+9200,locomotive engineers and operators,High Income
+9240,railroad conductors and yardmasters,High Income
+9260,"subway, streetcar, and other rail transportation workers",High Income
+9300,"sailors and marine oilers, and ship engineers",Middle Income
+9310,ship and boat captains and operators,High Income
+9350,parking lot attendants,Middle Income
+9360,automotive and watercraft service attendants,Middle Income
+9410,transportation inspectors,High Income
+9420,"miscellaneous transportation workers, including bridge and lock tenders and traffic technicians",Middle Income
+9415,"transportation attendants, except flight attendants",Middle Income
+9510,crane and tower operators,High Income
+9520,"dredge, excavating, and loading machine operators",Middle Income
+9560,"conveyor operators and tenders, and hoist and winch operators",Middle Income
+9600,industrial truck and tractor operators,Middle Income
+9610,cleaners of vehicles and equipment,Middle Income
+9620,"laborers and freight, stock, and material movers, hand",Middle Income
+9630,machine feeders and offbearers,Middle Income
+9640,"packers and packagers, hand",Middle Income
+9650,pumping station operators,Middle Income
+9720,refuse and recyclable material collectors,Middle Income
+9750,"miscellaneous material moving workers, including mine shuttle car operators, and tank car, truck, and ship loaders",Middle Income
+9840,military specific occupations,Middle Income

@@ -11,6 +11,7 @@ class C4_5:
         self.numAttributes = -1
         self.attrValues = {}
         self.attributes = []
+        self.countShit = 0
         self.tree = None
 
 
@@ -63,7 +64,7 @@ class C4_5:
                     if marital_status == node.children[i].category:
                         return self.recursive_classify(record, node.children[i])
             elif node.label == "IsBusinessOwner":
-                if record[4] == "1":
+                if record[4] == "B1":
                     return self.recursive_classify(record, node.children[0])
                 else:
                     return self.recursive_classify(record, node.children[1])
@@ -73,7 +74,7 @@ class C4_5:
                     if lives_in_city == node.children[i].category:
                         return self.recursive_classify(record, node.children[i])
             elif node.label == "Medical Condition":
-                if record[5] == "0":
+                if record[6] == "M0":
                     return self.recursive_classify(record, node.children[0])
                 else:
                     return self.recursive_classify(record, node.children[1])
@@ -83,14 +84,14 @@ class C4_5:
                     return self.recursive_classify(record, node.children[0])
                 else:
                     return self.recursive_classify(record, node.children[1])
-            elif node.label == "Job Begin Year":
+            elif node.label == "Job Begin  Year":
                 job_begin_year = float(record[8])
                 if job_begin_year <= node.threshold:
                     return self.recursive_classify(record, node.children[0])
                 else:
                     return self.recursive_classify(record, node.children[1])
             elif node.label == "Sex":
-                if record[9] == "1":
+                if record[9] == "S1":
                     return self.recursive_classify(record, node.children[0])
                 else:
                     return self.recursive_classify(record, node.children[1])
@@ -139,15 +140,22 @@ class C4_5:
         else:
             (best,best_threshold,splitted) = self.splitAttribute(curData, curAttributes)
             remainingAttributes = curAttributes[:]
-            remainingAttributes.remove(best)
+            if best is not -1:
+                remainingAttributes.remove(best)
             node = Node(False, best, best_threshold)
-            for subset in splitted:
+
+            for index in range(len(splitted)):
+                subset = splitted[index]
                 if len(subset) != 0:
                     child = self.recursiveGenerateTree(subset, remainingAttributes)
-                    self.set_category(child, best, subset)
+                    self.set_category(child, best, subset, False, index)
+                    node.children.append(child)
+                else:
+                    child = Node(True, self.getMajClass(curData), None)
+                    self.set_category(child, best, subset, True, index)
                     node.children.append(child)
 
-            return node
+        return node
 
     def getMajClass(self, curData):
         freq = [0]*len(self.classes)
@@ -174,21 +182,51 @@ class C4_5:
             return True
 
 
-    def set_category(self, child, best, subset):
-        if best == 'Race':
-            child.category = subset[0][0]
-        elif best == 'Education':
-            child.category = subset[0][2]
-        elif best == 'Marital Status':
-            child.category = subset[0][3]
-        elif best == 'IsBusinessOwner':
-            child.category = subset[0][4]
-        elif best == 'livesInCity':
-            child.category = subset[0][5]
-        elif best == 'Medical Condition':
-            child.category = subset[0][6]
-        elif best == 'Sex':
-            child.category = subset[0][9]
+    def set_category(self, child, best, subset, is_empty, index):
+        if not is_empty:
+            if best == 'Race':
+                child.category = subset[0][0]
+            elif best == 'Education':
+                child.category = subset[0][2]
+            elif best == 'Marital Status':
+                child.category = subset[0][3]
+            elif best == 'IsBusinessOwner':
+                child.category = subset[0][4]
+            elif best == 'livesInCity':
+                child.category = subset[0][5]
+            elif best == 'Medical Condition':
+                child.category = subset[0][6]
+            elif best == 'Sex':
+                child.category = subset[0][9]
+        else:
+            if best == 'Race':
+                child.category = 'R' + str(index)
+            elif best == 'Education':
+                if index is 0:
+                    child.category = 'No High School Diploma'
+                elif index is 1:
+                    child.category = 'High School Graduate'
+                elif index is 2:
+                    child.category = 'College'
+                elif index is 3:
+                    child.category = "Bachelor's Degree'"
+                elif index is 4:
+                    child.category = "Master's Degree"
+                elif index is 5:
+                    child.category = "MD/DDS/JD"
+                elif index is 6:
+                    child.category = "Doctorate Degree"
+            elif best == 'Marital Status':
+                child.category = str(index + 1)
+            elif best == 'IsBusinessOwner':
+                child.category = "B" + str(index + 1)
+            elif best == 'livesInCity':
+                child.category = "L" + str(index)
+            elif best == 'Medical Condition':
+                child.category = "M" + str(index)
+            elif best == 'Sex':
+                child.category = "S" + str(index + 1)
+
 
 
     def splitAttribute(self, curData, curAttributes):
